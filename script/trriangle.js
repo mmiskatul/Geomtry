@@ -1,55 +1,47 @@
 function calculateTriangleArea(){
-    // for trinagle base 
-    const triangleBaseInput=document.getElementById('triangle-base');
-    const triangleBaseInputValue=triangleBaseInput.value;
-    const base=parseFloat(triangleBaseInputValue);
-    // for triangle height 
-    const triangleheightInput=document.getElementById('triangle-height');
-    const triangleheightInputValue=triangleBaseInput.value;
-    const height=parseFloat(triangleBaseInputValue);
+    const base= input('triangle-base');
+    const height=input('triangle-height');
     const triangleArea=0.5*base*height;
-    // display the Area
-    const trinagleAreaSpan=document.getElementById('triangle-Area');
-    trinagleAreaSpan.innerText = triangleArea;
-
+    setInnertext('triangle-Area',triangleArea);
 }
+
  function claculateRectangleArea(){
-    // for rectangle
-    const rectanglewidth=document.getElementById('rectangle-width');
-    const rectanglewidthValue=rectanglewidth.value;
-    const width=parseFloat(rectanglewidthValue);
-
-    const rectanglelength=document.getElementById('rectangle-length');
-    const rectanglelengthValue=rectanglelength.value;
-    const length=parseFloat(rectanglelengthValue);
+    const width = input('rectangle-width');
+    const length =input('rectangle-length');
     const rectangleArea =width*length;
-
-    const rectangleAreaspan=document.getElementById('rectangle-Area');
-    rectangleAreaspan.innerText=rectangleArea;
+    setInnertext('rectangle-Area',rectangleArea);
  }
  function claculateparallelogramArea(){
-    const parallelogramBaseInput=document.getElementById('parallelogram-base');
-    const parallelogramBaseInputValue=parallelogramBaseInput.value;
-    const Base=parseFloat(parallelogramBaseInputValue);
-
-    const parallelogramheightInput =document.getElementById('parallelogram-height');
-    const parallelogramheightInputValue=parallelogramheightInput.value;
-    const height=parseFloat(parallelogramheightInputValue);
-    const parallelogramArea=Base * height;
-
-    const parallelogramAreaSpan=document.getElementById('parallelogram-Area');
-    parallelogramAreaSpan.innerText =parallelogramArea;
+    const base =input('parallelogram-base');
+    const height=input('parallelogram-base');
+    const parallelogramArea=base * height;
+    setInnertext('parallelogram-Area',parallelogramArea);
  }
  function claculaterhombusArea(){
-    const rhombusDiagonal1Input = document.getElementById('rhombus-diagonal1');
-    const rhombusDiagonal1Value = rhombusDiagonal1Input.value;
-    const diagonal1 = parseFloat(rhombusDiagonal1Value);
-
-    const rhombusDiagonal2Input = document.getElementById('rhombus-diagonal2');
-    const rhombusDiagonal2Value = rhombusDiagonal2Input.value;
-    const diagonal2 = parseFloat(rhombusDiagonal2Value);
+    const diagonal1 =input('rhombus-diagonal1');
+    const diagonal2 = input('rhombus-diagonal2');
     const rhombusArea = 0.5 *diagonal1*diagonal2;
-    const rhombusAreaspan=document.getElementById('rhombus-Area');
-    rhombusAreaspan.innerText =rhombusArea;
-
+    setInnertext('rhombus-Area',rhombusArea);
  }
+ function claculatepentagonArea(){
+    const a=input('pentagon-a');
+    const p=5*a;
+    const pentagonArea=p*a;
+    setInnertext('pentagon-area',pentagonArea);
+ }
+ function claculateEllipseArea(){
+    const a=input('Ellipse-x-axis');
+    const b=input('Ellipse-y-axis');
+    const EllipseArea=3.14 *a * b;
+    setInnertext('pentagon-area',EllipseArea);
+ }
+ function input(def){
+    const triangleBaseInput=document.getElementById(def);
+    const triangleBaseInputValue=triangleBaseInput.value;
+    const base=parseFloat(triangleBaseInputValue);
+    return base;
+}
+function setInnertext(id,area){
+    const trinagleAreaSpan=document.getElementById(id);
+    trinagleAreaSpan.innerText = area;
+}
